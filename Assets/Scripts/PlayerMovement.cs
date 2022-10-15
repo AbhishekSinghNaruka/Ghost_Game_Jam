@@ -6,12 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] public float recoilForce = 10f;
-    [SerializeField] public float rotationSpeed = 1f;
-    [SerializeField] public float reloadTime = 60f;
+    public float recoilForce = 10f;
+    public float rotationSpeed = 1f;
+    public float reloadTime = 60f;
+    public int totalBarrel = 1; 
+    public int health = 10;
     private float reloadTimeRem;
     private float fire;
     private float rotationMovement;
+    [SerializeField] private InstantiateBullet instantiateBullet;
 
     //TODO: Restrict Movement upto 180 degree only and update that restrictions after shooting
     void Start()
@@ -29,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(reloadTimeRem);
         if (reloadTimeRem > 0f) {
             reloadTimeRem--;
         }
@@ -43,7 +45,8 @@ public class PlayerMovement : MonoBehaviour
             float xForce = fire * Mathf.Sin(Mathf.Deg2Rad * rb.rotation) * recoilForce;
             float yForce = -fire * Mathf.Cos(Mathf.Deg2Rad * rb.rotation) * recoilForce;
             rb.AddForce(new Vector2(xForce, yForce), ForceMode2D.Impulse);
-            reloadTimeRem = reloadTime; 
+            reloadTimeRem = reloadTime;
+            instantiateBullet.fireBullet();
         }
     }
 }
