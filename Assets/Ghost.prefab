@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: bd881b793323a3f4dba03e5f0c42e855, type: 3}
-  m_Color: {r: 0.9811321, g: 0.19807759, b: 0.19807759, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2b583333353234943bdac58f3b82102c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.98039216}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,18 +98,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000023841858, y: 0.028600156}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.16, y: 2.34}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.1440117, y: 2.0868115}
   m_EdgeRadius: 0
 --- !u!50 &6371724420066875790
 Rigidbody2D:
@@ -145,5 +145,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
+  health: 010000000100000002000000
+  ghostSprites:
+  - {fileID: 21300000, guid: 2b583333353234943bdac58f3b82102c, type: 3}
+  - {fileID: 21300000, guid: 301039b383e0f6442b4b6bca153b1481, type: 3}
+  - {fileID: 21300000, guid: a4f3eb98270d31b4083609b852ec7f04, type: 3}
   maxSpwanXForce: 5
   maxSpwanYForce: 5
